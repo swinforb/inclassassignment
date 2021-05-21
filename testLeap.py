@@ -10,15 +10,15 @@ import unittest
 class testLeapYear(unittest.TestCase):
 
 	def test_negative_year(self):
-		results = testLeap.testLeapYear()
+		results = leapyear.leapYear()
 		userInput = results[0]
 		self.assertLessThan(0, userInput)
 
 	def test_is_int(self):
-		with self.assertRaises(TypeError): testLeap.testLeapYear()
+		with self.assertRaises(TypeError): leapyear.leapYear()
 
 	def test_validity(self):
-		results = testLeap.testLeapYear()
+		results = leap.leapYear()
 		expected = input("Do you expect the year to be a leap year? (y/n) : ")
 		if expected == "y":
 			expectede = 1
