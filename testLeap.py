@@ -5,23 +5,31 @@
 #############################
 
 import unittest
+import leapyear
 
 
 class testLeapYear(unittest.TestCase):
 
 	def test_negative_year(self):
-		results = leapyear.leapYear()
+		print("TEST NEGATIVE")
+		results = leapyear.leapYears()
 		userInput = results[0]
-		self.assertLessThan(0, userInput)
+		self.assertLess(0, userInput)
 
 	def test_is_int(self):
-		with self.assertRaises(TypeError): leapyear.leapYear()
+		print("TEST VALUE")
+		with self.assertRaises(ValueError): leapyear.leapYears()
 
 	def test_validity(self):
-		results = leap.leapYear()
+		print("TEST VALIDITY")
+		results = leapyear.leapYears()
 		expected = input("Do you expect the year to be a leap year? (y/n) : ")
 		if expected == "y":
 			expectede = 1
 		else:
 			expectede = 0
 		self.assertTrue(results[1] == expectede)
+
+
+if __name__ == '__main__':
+	unittest.main()
